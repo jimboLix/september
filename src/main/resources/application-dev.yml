@@ -1,6 +1,6 @@
 server:
   port: 8088
-logging:
+#logging:
 #  path: D:\develop\september
-  file: D:\develop\september\september.log
+#  file: D:\develop\september\september.log
 #二者不能同时使用，如若同时使用，则只有logging.file生效
