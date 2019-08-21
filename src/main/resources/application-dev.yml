@@ -1,6 +1,34 @@
 server:
   port: 8088
-#logging:
-#  path: D:\develop\september
-#  file: D:\develop\september\september.log
-#二者不能同时使用，如若同时使用，则只有logging.file生效
+  #logging:
+  #  path: D:\develop\september
+  #  file: D:\develop\september\september.log
+  #二者不能同时使用，如若同时使用，则只有logging.file生效
+spring:
+  datasource:
+    url: jdbc:mysql://47.98.140.228:3306/september
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #    schema: classpath:data/initData.sql
+    #    data: classpath:data/initData.sql
+    initialization-mode: always
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 8
+      min-idle: 1
+      max-active: 20
+      max-wait: 60000
+      time-between-eviction-runsMillis: 60000
+      min-evictable-idle-timeMillis: 300000
+      validation-query: select 'x' FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      max-open-prepared-statements: 20
+      max-pool-prepared-statement-per-connection-size: 20
+      filters: stat
+      connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      use-global-data-source-stat: true
+
