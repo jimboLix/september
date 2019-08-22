@@ -1,5 +1,6 @@
 package com.jimbolix.september.entity;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -21,10 +22,10 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-public class SeptUser extends BaseEntity {
+public class SeptUser extends BaseEntity implements Serializable {
 
-    private static final long serialVersionUID = 1L;
 
+    private static final long serialVersionUID = -8278995053341214115L;
     private Long id;
 
     /**

@@ -109,7 +109,9 @@ debug：当此属性设置为true时，将打印出logback内部日志信息，�
             </layout>
         </appender>
 
-        <logger name="com.jimbolix.september.mapper" level="info"/>
+        <logger name="com.jimbolix.september.service" level="debug"/>
+        <logger name="io.lettuce.core" level="error"/>
+        <logger name="io.netty" level="error"/>
         <logger name="org.springframework" level="debug" additivity="false"></logger>
         <logger name="com.baomidou.mybatisplus" level="info"></logger>
         <root level="debug">

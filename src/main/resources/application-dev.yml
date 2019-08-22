@@ -4,9 +4,10 @@ server:
   #  path: D:\develop\september
   #  file: D:\develop\september\september.log
   #二者不能同时使用，如若同时使用，则只有logging.file生效
+  #47.98.140.228
 spring:
   datasource:
-    url: jdbc:mysql://47.98.140.228:3306/september
+    url: jdbc:mysql://${MYSQL_URL:localhost}:${MYSQL_PORT:3306}/september
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -31,4 +32,11 @@ spring:
       filters: stat
       connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
       use-global-data-source-stat: true
+  redis:
+    host: ${REDIS_HOST:localhost}
+    port: ${REDIS_PORT:6379}
+    jedis:
+      pool:
+        max-active: 20
+
 
