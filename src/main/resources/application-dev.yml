@@ -38,5 +38,7 @@ spring:
     jedis:
       pool:
         max-active: 20
+swagger:
+  enable: true
 
 
