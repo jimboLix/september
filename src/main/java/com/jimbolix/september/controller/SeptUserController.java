@@ -10,11 +10,8 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -38,5 +35,12 @@ public class SeptUserController {
     public IPage<SeptUser> page(@RequestBody SeptUserVo septUserVo){
         IPage<SeptUser> page = userService.page(septUserVo);
         return page;
+    }
+
+    @PutMapping("")
+    @ApiOperation(value = "添加用户")
+    @ApiParam(name = "septUser",value = "保存用户请求参数")
+    public ResponseEntity add(@RequestBody SeptUser septUser) throws Exception {
+        throw new Exception("全局异常处理测试");
     }
 }

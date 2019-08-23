@@ -1,0 +1,1 @@
+java -jar -Duser.timezone=GMT+08 /usr/local/september/september*.jar --spring.profiles.active=prod
